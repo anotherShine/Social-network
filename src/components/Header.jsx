@@ -1,8 +1,9 @@
 import React from 'react';
+import classes from './Header.module.css'
 
 const Header = () => {
-    return <header className="header">
-    <img src="https://brandmark.io/logo-rank/random/bp.png" alt='bp-logo' />
+  return <header className={classes.header}>
+    <img src="https://cdn.logo.com/hotlink-ok/logo-social.png" alt='logo' />
   </header>
 }
 export default Header;
