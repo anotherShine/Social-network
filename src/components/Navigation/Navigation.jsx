@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import classes from './Navigation.module.css';
 
 
+
 // let classes = {
 //   nav: '.Navigation_nav__D7wqm',
 //   item: 'Navigation_item__zmAH9',
@@ -21,7 +22,7 @@ const Navigation = () => {
         <NavLink to='/profile' className={navData => navData.isActive ? classes.active : classes.item} >Profile</NavLink>
       </div>
       <div className={classes.item}>
-        <NavLink to='/message' className={navData => navData.isActive ? classes.active : classes.item}>Messages</NavLink>
+        <NavLink to='/dialogs' className={navData => navData.isActive ? classes.active : classes.item}>Messages</NavLink>
       </div>
       <div className={classes.item}>
         <NavLink to='/news' className={navData => navData.isActive ? classes.active : classes.item}>News</NavLink>
