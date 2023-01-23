@@ -18,7 +18,7 @@ import classes from './Navigation.module.css';
 const Navigation = () => {
   return (
     <nav className={classes.nav}>
-      <div>
+      <div className={classes.item}>
         <NavLink to='/profile' className={navData => navData.isActive ? classes.active : classes.item} >Profile</NavLink>
       </div>
       <div className={classes.item}>
