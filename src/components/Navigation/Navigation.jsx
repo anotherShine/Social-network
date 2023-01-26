@@ -4,17 +4,6 @@ import classes from './Navigation.module.css';
 
 
 
-// let classes = {
-//   nav: '.Navigation_nav__D7wqm',
-//   item: 'Navigation_item__zmAH9',
-//   active: 'Navigation_item__zm23424'
-// }
-
-// let classes1 = "item"
-// let classes2 = "active"
-// item active
-// let classes = classes1 + " " + classes2
-
 const Navigation = () => {
   return (
     <nav className={classes.nav}>
