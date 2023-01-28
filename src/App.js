@@ -17,11 +17,11 @@ function App(props) {
         <Navigation />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile postsData={props.postsData} />} />
-            <Route path="/dialogs/*" element={<Dialogs dialogData={props.dialogData} dialogMessage={props.dialogMessage}/>} />
-            <Route path="/news" element={<Profile postsData={props.postsData}/>} />
-            <Route path="/music" element={<Profile postsData={props.postsData}/>} />
-            <Route path="/settings" element={<Profile postsData={props.postsData}/>} />
+            <Route path="/profile" element={<Profile state={props.state.profilePage} />} />
+            <Route path="/dialogs/*" element={<Dialogs state={props.state.messagesPage} />} />
+            <Route path="/news" element={<Profile state={props.state.profilePage}/>} />
+            <Route path="/music" element={<Profile state={props.state.profilePage}/>} />
+            <Route path="/settings" element={<Profile state={props.state.profilePage}/>} />
           </Routes>
         </div>
       </div>
