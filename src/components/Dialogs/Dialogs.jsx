@@ -13,20 +13,22 @@ const Dialogs = (props) => {
 
     let messagesElements = props.state.dialogMessage
         .map(element => <Message text={element.message} />);
-        
+
     // let photosElements = props.state.photo
     //     .map(element => <DialogItem photo={element.photo} />)
 
     return (
         <div className={classes.dialogs}>
-            {/* <div className={classes.photosElements}>
-                {photosElements}
-            </div> */}
             <div className={classes.dialogsItems}>
                 {dialogsElements}
             </div>
             <div className={classes.messages}>
                 {messagesElements}
+                <h3>New messages</h3>
+                <div>
+                    <input type="text" />
+                    <button>Add</button>
+                </div>
             </div>
         </div>
     )
