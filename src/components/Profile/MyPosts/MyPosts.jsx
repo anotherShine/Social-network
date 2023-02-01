@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './MyPosts.module.css'
 import Post from './Post/Post'
+import { addPost } from './../../../redux/state';
 
 
 const MyPosts = (props) => {
@@ -9,8 +10,10 @@ const MyPosts = (props) => {
 
   let addPost = () => {
     let text = newPostElement.current.value;
-    alert (text)
+    props.addPost(text)
+    newPostElement.current.value = ''
   }
+
 
   let postsElements = props.postsData
     .map(element => <Post message={element.message} likesCount={element.likesCount} />)
@@ -20,11 +23,11 @@ const MyPosts = (props) => {
     <div className={classes.postsBlock}>
       <h3>My posts</h3>
       <div>
-        <input ref={newPostElement}></input>
+        <input type="text" ref={newPostElement}></input>
         <button onClick={ addPost }>Add a new post</button>
       </div>
       <div className={classes.posts}></div>
-      {postsElements}
+      {postsElements} 
     </div>
   )
 }

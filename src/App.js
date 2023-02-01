@@ -5,7 +5,6 @@ import Header from "./components/Header/Header";
 import Navigation from "./components/Navigation/Navigation";
 import Dialogs from "./components/Dialogs/Dialogs";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { render } from './../../../../13.1_Type_Script/tutorial-rok-do-kroku/dist/helpers/render-tasks.helper';
 
 function App(props) {
 
@@ -17,7 +16,7 @@ function App(props) {
         <Navigation />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile state={props.state.profilePage} />} />
+            <Route path="/profile" element={<Profile state={props.state.profilePage} addPost={props.addPost} />} />
             <Route path="/dialogs/*" element={<Dialogs state={props.state.messagesPage} />} />
             <Route path="/news" element={<Profile state={props.state.profilePage}/>} />
             <Route path="/music" element={<Profile state={props.state.profilePage}/>} />
