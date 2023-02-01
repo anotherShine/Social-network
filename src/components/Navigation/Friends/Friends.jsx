@@ -4,11 +4,11 @@ import classes from './Navigation.module.css';
 
 
 
-const Navigation = () => {
+const Friends = () => {
   return (
     <div>
       fdfdf
     </div>
 )}
 
-export default Navigation;
+export default Friends;

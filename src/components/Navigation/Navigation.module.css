@@ -18,10 +18,17 @@
   text-decoration: none;
 }
 .friends img {
-  margin-top: 60px;
+  /* margin-top: 60px; */
   width: 50px;
   height: 50px;
   border-radius: 30px;
-  
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+}
+.friends {
+  margin-top: 10px;
+  display: block;
+  margin-left: 10px;
+}
+
+.friendsSection {
+  margin-top: 50px;
 }
