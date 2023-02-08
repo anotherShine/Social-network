@@ -14,16 +14,18 @@ const MyPosts = (props) => {
     newPostElement.current.value = ''
   }
 
-
   let postsElements = props.postsData
     .map(element => <Post message={element.message} likesCount={element.likesCount} />)
 
+    let onPostChange = () => {
+
+    }
   return (
 
     <div className={classes.postsBlock}>
       <h3>My posts</h3>
       <div>
-        <input type="text" ref={newPostElement}></input>
+        <input type="text" onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
         <button onClick={ addPost }>Add a new post</button>
       </div>
       <div className={classes.posts}></div>

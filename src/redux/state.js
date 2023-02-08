@@ -7,6 +7,7 @@ let state = {
       { id: 1, message: "Hi, how are you?", likesCount: "likes 15" },
       { id: 2, message: "It's my first post", likesCount: "likes 23" },
     ],
+    newPostText: 'input your text here'
   },
   messagesPage: {
     dialogMessage: [
@@ -21,7 +22,7 @@ let state = {
       { id: 4, name: "Steve", photo:  <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="man" /> },
       { id: 5, name: "Meri", photo:  <img src="https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?cs=srgb&dl=pexels-ali-pazani-2584269.jpg&fm=jpg" alt="girl" /> },
       { id: 6, name: "Katy", photo:  <img src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?cs=srgb&dl=pexels-masha-raymers-2726111.jpg&fm=jpg" alt="girl" /> },
-      { id: 7, name: "Lui", photo:  <img src="https://www.shutterstock.com/image-photo/profile-picture-smiling-young-african-260nw-1873784920.jpg" alt="man" /> },
+      { id: 7, name: "Lui", photo:  <img src="https://www.elitesingles.co.uk/wp-content/uploads/sites/59/2019/11/2b_en_articleslide_sm2-350x264.jpg" alt="man" /> },
     ],
   },
   sidebarPage: {
