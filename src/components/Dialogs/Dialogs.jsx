@@ -29,7 +29,7 @@ const Dialogs = (props) => {
                 {messagesElements}
                 <h3>New message</h3>
                 <div>
-                    <input type="text" ref={newPostElement}/>
+                    <input type="text" ref={newPostElement} />
                     <button onClick={alertMessage}>Send</button>
                 </div>
             </div>

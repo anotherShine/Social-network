@@ -25,9 +25,9 @@ const Navigation = () => {
       <div className={classes.friendsSection}>
         <NavLink to='/friends' className={navData => navData.isActive ? classes.active : classes.item}>FRIENDS</NavLink>
         <div className={classes.friends}>
-        <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="man" /> <div className='names'>Steve</div> 
-        <img src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?cs=srgb&dl=pexels-masha-raymers-2726111.jpg&fm=jpg" alt="girl" /> <div className='names'>Katy</div>
-        <img src="https://www.elitesingles.co.uk/wp-content/uploads/sites/59/2019/11/2b_en_articleslide_sm2-350x264.jpg" alt="man" /> <div className='names'>Lui</div>
+          <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="man" /> <div className='names'>Steve</div>
+          <img src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?cs=srgb&dl=pexels-masha-raymers-2726111.jpg&fm=jpg" alt="girl" /> <div className='names'>Katy</div>
+          <img src="https://www.elitesingles.co.uk/wp-content/uploads/sites/59/2019/11/2b_en_articleslide_sm2-350x264.jpg" alt="man" /> <div className='names'>Lui</div>
         </div>
       </div>
     </nav>)
