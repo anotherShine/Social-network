@@ -3,15 +3,18 @@ import { NavLink } from 'react-router-dom';
 import classes from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import {updateNewPostTextActionCreator, sendMessageCreator} from './../../redux/state';
 
 
 
 const Dialogs = (props) => {
 
-    let newPostElement = React.createRef();
-    let alertMessage = () => {
-        let text = newPostElement.current.value
-        alert(text)
+    let onSendMessageClick = () => {
+        props.store.dispatch(sendMessageCreator());
+    }
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.store.dispatch(updateNewPostTextActionCreator(body));
     }
 
     let dialogsElements = props.state.dialogData
@@ -19,6 +22,8 @@ const Dialogs = (props) => {
 
     let messagesElements = props.state.dialogMessage
         .map(element => <Message text={element.message} />);
+
+    let newMessageBody = props.state.newMessageBody;
 
     return (
         <div className={classes.dialogs}>
@@ -29,8 +34,11 @@ const Dialogs = (props) => {
                 {messagesElements}
                 <h3>New message</h3>
                 <div>
-                    <input type="text" ref={newPostElement} />
-                    <button onClick={alertMessage}>Send</button>
+                    <input
+                        type="text"
+                        value={newMessageBody}
+                        onChange={onNewMessageChange} />
+                    <button onClick={onSendMessageClick}>Send</button>
                 </div>
             </div>
         </div>
