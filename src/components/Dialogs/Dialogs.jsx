@@ -9,6 +9,8 @@ import {updateNewPostTextActionCreator, sendMessageCreator} from './../../redux/
 
 const Dialogs = (props) => {
 
+    let state = props.store.getState().messagesPage;
+
     let onSendMessageClick = () => {
         props.store.dispatch(sendMessageCreator());
     }
@@ -17,13 +19,13 @@ const Dialogs = (props) => {
         props.store.dispatch(updateNewPostTextActionCreator(body));
     }
 
-    let dialogsElements = props.state.dialogData
+    let dialogsElements = state.dialogData
         .map(element => <DialogItem photo={element.photo} name={element.name} id={element.id} />);
 
-    let messagesElements = props.state.dialogMessage
+    let messagesElements = state.dialogMessage
         .map(element => <Message text={element.message} />);
 
-    let newMessageBody = props.state.newMessageBody;
+    let newMessageBody = state.newMessageBody;
 
     return (
         <div className={classes.dialogs}>
@@ -34,8 +36,7 @@ const Dialogs = (props) => {
                 {messagesElements}
                 <h3>New message</h3>
                 <div>
-                    <input
-                        type="text"
+                    <textarea
                         value={newMessageBody}
                         onChange={onNewMessageChange} />
                     <button onClick={onSendMessageClick}>Send</button>
