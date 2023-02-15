@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import classes from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
@@ -26,17 +25,20 @@ const Dialogs = (props) => {
         .map(element => <Message text={element.message} />);
 
     let newMessageBody = state.newMessageBody;
+    console.log(newMessageBody)
+    
 
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItems}>
                 {dialogsElements}
             </div>
-            <div className={classes.messages}>
-                {messagesElements}
+            <div className={classes.messages}>                                                                                                                                                                                                                                                       
+                <div>{messagesElements}</div>
                 <h3>New message</h3>
                 <div>
-                    <textarea
+                    <textarea 
+                        placeholder='Enter your message'
                         value={newMessageBody}
                         onChange={onNewMessageChange} />
                     <button onClick={onSendMessageClick}>Send</button>
