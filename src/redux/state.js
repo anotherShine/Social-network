@@ -1,9 +1,6 @@
-// import { profileReducer } from './profile-reducer'
-
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-const UPDATE_NEW_MESSAGE_BODY = "UPDATE_NEW_MESSAGE_BODY";
-const SEND_MESSAGE = "SEND_MESSAGE";
+import profileReducer from "./profile-reducer.js";
+import dialogsReducer from "./dialogs-reducer.js";
+import sidebarReducer from "./sidebar-reducer.js";
 
 let store = {
   _state: {
@@ -13,7 +10,6 @@ let store = {
         { id: 1, message: "Hi, how are you?", likesCount: "likes 15" },
         { id: 2, message: "It's my first post", likesCount: "likes 23" },
       ],
-      
     },
     messagesPage: {
       dialogMessage: [
@@ -142,30 +138,11 @@ let store = {
   },
 
   dispatch(action) {
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.messagesPage = dialogsReducer(this._state.messagesPage, action);
+    this._state.sidebarPage = sidebarReducer(this._state.sidebarPage, action);
 
-    // profileReducer(this._state.profilePage, action);
-
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        likesCount: 0,
-      };
-      this._state.profilePage.postsData.push(newPost);
-      this._state.profilePage.newPostText = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    } else if (addPostActionCreator.type === UPDATE_NEW_MESSAGE_BODY) {
-      this._state.messagesPage.newMessageBody = action.body;
-      this._callSubscriber(this._state);
-    } else if (addPostActionCreator.type === SEND_MESSAGE) {
-      let body = this._state.messagesPage.newMessageBody;
-      this._state.messagesPage.newMessageBody = "";
-      this._state.messagesPage.dialogMessage.push({ id: 6, message: body });
-      this._callSubscriber(this._state);
-    }
+    this._callSubscriber(this._state);
   },
 };
 
