@@ -1,3 +1,5 @@
+// import { profileReducer } from './profile-reducer'
+
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE_NEW_MESSAGE_BODY";
@@ -6,11 +8,12 @@ const SEND_MESSAGE = "SEND_MESSAGE";
 let store = {
   _state: {
     profilePage: {
+      newPostText: "input your text here",
       postsData: [
         { id: 1, message: "Hi, how are you?", likesCount: "likes 15" },
         { id: 2, message: "It's my first post", likesCount: "likes 23" },
       ],
-      newPostText: "input your text here",
+      
     },
     messagesPage: {
       dialogMessage: [
@@ -139,6 +142,9 @@ let store = {
   },
 
   dispatch(action) {
+
+    // profileReducer(this._state.profilePage, action);
+
     if (action.type === ADD_POST) {
       let newPost = {
         id: 5,
@@ -156,13 +162,12 @@ let store = {
       this._callSubscriber(this._state);
     } else if (addPostActionCreator.type === SEND_MESSAGE) {
       let body = this._state.messagesPage.newMessageBody;
-      this._state.messagesPage.newMessageBody ='';
-      this._state.messagesPage.dialogMessage.push({ id: 6, message: body })
+      this._state.messagesPage.newMessageBody = "";
+      this._state.messagesPage.dialogMessage.push({ id: 6, message: body });
       this._callSubscriber(this._state);
     }
   },
 };
-
 
 export const addPostActionCreator = () => {
   return {

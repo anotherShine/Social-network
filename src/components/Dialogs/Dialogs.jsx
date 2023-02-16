@@ -6,6 +6,7 @@ import {updateNewPostTextActionCreator, sendMessageCreator} from './../../redux/
 
 
 
+
 const Dialogs = (props) => {
 
     let state = props.store.getState().messagesPage;
