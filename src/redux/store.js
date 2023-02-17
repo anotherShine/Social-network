@@ -1,6 +1,6 @@
 import profileReducer from "./profile-reducer.js";
 import dialogsReducer from "./dialogs-reducer.js";
-import sidebarReducer from "./sidebar-reducer.js";
+import sidebarReducer from "./sidebar-reducer.js.js";
 
 let store = {
   _state: {
@@ -146,27 +146,7 @@ let store = {
   },
 };
 
-export const addPostActionCreator = () => {
-  return {
-    type: "ADD-POST",
-  };
-};
-export const updateNewPostTextActionCreator = (body) => {
-  return {
-    type: "UPDATE-NEW-POST-TEXT",
-    body: body,
-  };
-};
-export const sendMessageCreator = () => {
-  return {
-    type: "SEND_MESSAGE",
-  };
-};
-export const updateNewMessageBodyCreator = (text) => {
-  return {
-    type: "UPDATE_NEW_MESSAGE_BODY",
-    newText: text,
-  };
-};
+
+
 window.store = store;
 export default store;
