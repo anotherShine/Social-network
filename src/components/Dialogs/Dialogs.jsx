@@ -10,7 +10,7 @@ import {updateNewMessageBodyCreator, sendMessageCreator} from './../../redux/dia
 const Dialogs = (props) => {
 
     let state = props.store.getState().messagesPage;
-
+   
     let onSendMessageClick = () => {
         props.store.dispatch(sendMessageCreator());
     }

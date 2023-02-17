@@ -4,6 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let renderEntireTree = (state) => {
   root.render(
@@ -14,4 +15,7 @@ let renderEntireTree = (state) => {
 };
 
 renderEntireTree(store.getState());
-store.subscribe(renderEntireTree);
+store.subscribe( () => {
+  let state = store.getState();
+  renderEntireTree(state);
+});
