@@ -1,8 +1,7 @@
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE_NEW_MESSAGE_BODY";
 const SEND_MESSAGE = "SEND_MESSAGE";
 
-
-let initialState =  {
+let initialState = {
   dialogMessage: [
     { id: 1, message: "Hi" },
     { id: 2, message: "How are you?" },
