@@ -10,14 +10,6 @@ const Dialogs = (props) => {
 
     let state = props.messagesPage;
 
-    let onSendMessageClick = () => {
-        props.onSendMessage();
-    }
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
-    }
-
     let dialogsElements = state.dialogData
         .map(element => <DialogItem photo={element.photo} name={element.name} id={element.id} />);
 
@@ -26,7 +18,13 @@ const Dialogs = (props) => {
 
     let newMessageBody = state.newMessageBody;
 
-
+    let onSendMessageClick = () => {
+        props.onSendMessage();
+    }
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.updateNewMessageBody(body);
+    }
 
     return (
         <div className={classes.dialogs}>
