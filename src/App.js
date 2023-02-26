@@ -5,9 +5,9 @@ import Header from "./components/Header/Header";
 import Navigation from "./components/Navigation/Navigation";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import UsersContainer from "./components/Users/Users";
+import UsersContainer from "./components/Users/UsersContainer";
 
-function App(props) {
+function App() {
   return (
     
     <BrowserRouter>
