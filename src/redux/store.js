@@ -1,6 +1,7 @@
 import profileReducer from "./profile-reducer.js";
 import dialogsReducer from "./dialogs-reducer.js";
 import sidebarReducer from "./sidebar-reducer.js";
+import usersReducer from "./users-reducer.js"
 
 let store = {
   _state: {
@@ -125,6 +126,34 @@ let store = {
         },
       ],
     },
+    usersPage: {
+      users: [
+        {
+          id: 1,
+          photoUrl: "https://wac-cdn.atlassian.com/ru/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=812",
+          followed: false,
+          fullName: "Gregor S.",
+          status: "student",
+          location: { city: "Poznan", country: "Poland" },
+        },
+        {
+          id: 2,
+          photoUrl: "https://wac-cdn.atlassian.com/ru/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=812",
+          followed: true,
+          fullName: "Vlodi K.",
+          status: "junior frontend dev",
+          location: { city: "Kyiv", country: "Ukraine" },
+        },
+        {
+          id: 3,
+          photoUrl: "https://wac-cdn.atlassian.com/ru/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=812",
+          followed: false,
+          fullName: "Tom K.",
+          status: "senior frontend dev",
+          location: { city: "Liverpool", country: "Great Britain" },
+        },
+      ],
+    }
   },
   _callSubscriber() {
     console.log("State changed");
@@ -141,6 +170,7 @@ let store = {
     this._state.profilePage = profileReducer(this._state.profilePage, action);
     this._state.messagesPage = dialogsReducer(this._state.messagesPage, action);
     this._state.sidebarPage = sidebarReducer(this._state.sidebarPage, action);
+    this._state.usersPage = usersReducer(this._state.usersPage, action);
 
     this._callSubscriber(this._state);
   },
