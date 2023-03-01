@@ -4,7 +4,7 @@ import Users from "./Users";
 import { followAC, unFollowAC, setUsersAC } from './../../redux/users-reducer';
 
 let mapStateToProps = (state) => {
-   
+
     return {
         users: state.usersPage.users
     }
@@ -22,4 +22,4 @@ let mapDispatchToProps = (dispatch) => {
         },
     }
 };
-export default connect (mapStateToProps, mapDispatchToProps)(Users);
+export default connect(mapStateToProps, mapDispatchToProps)(Users);
