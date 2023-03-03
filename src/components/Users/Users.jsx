@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./users.module.css";
-import axios from "axios"
+import axios from "axios";
+import userPhoto from "../../assets-img/images/User-Avatar-Profile-Transparent-Isolated-PNG.png"
 
 let Users = (props) => {
-
+    
     if (props.users.length === 0) {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users8").then(response => {
-            debugger
-            props.setUsers()
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+
+            props.setUsers(response.data.items)
 
         })
     }
@@ -16,7 +17,7 @@ let Users = (props) => {
             props.users.map(u => <div key={u.id}>
                 <span>
                     <div>
-                        <img src={u.photoUrl} alt="man" className={styles.userPhoto} />
+                        <img src={u.photos.small != null? u.photos.small: userPhoto} alt="man" className={styles.userPhoto} />
                     </div>
                     <div>
                         {u.followed
@@ -26,12 +27,12 @@ let Users = (props) => {
                 </span>
                 <span>
                     <span>
-                        <div>{u.fullName}</div>
+                        <div>{u.name}</div>
                         <div>{u.status}</div>
                     </span>
                     <span>
-                        <div>{u.location.country}</div>
-                        <div>{u.location.city}</div>
+                        <div>{"u.location.country"}</div>
+                        <div>{"u.location.city"}</div>
                     </span>
                 </span>
             </div>)
