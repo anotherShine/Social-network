@@ -5,9 +5,8 @@ import userPhoto from "../../assets-img/images/User-Avatar-Profile-Transparent-I
 
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props);
-alert("new")
+
+    componentDidMount() {
         axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
 
             this.props.setUsers(response.data.items)
