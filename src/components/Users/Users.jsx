@@ -14,10 +14,10 @@ class Users extends React.Component {
     }
 
     render() {
-        return <div>
+        return <div className={styles.usersPage}>
             <div>
                 <span>1</span>
-                <span className={styles.selectedPage}>2</span>
+                <span className={styles.selectedPageNumber}>2</span>
                 <span>3</span>
                 <span>4</span>
                 <span>5</span>
