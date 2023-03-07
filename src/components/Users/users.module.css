@@ -10,3 +10,7 @@
 .usersPage {
     padding: 20px;
 }
+.allUsersPage{
+    cursor: pointer;
+    background-color: bisque;
+}
