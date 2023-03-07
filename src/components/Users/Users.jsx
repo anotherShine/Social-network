@@ -11,6 +11,9 @@ class Users extends React.Component {
 
             this.props.setUsers(response.data.items)
         })
+    };
+    onPageChanged = (pageNumber) => {
+        this.props.setCurrentPage(pageNumber)
     }
 
     render() {
@@ -26,7 +29,7 @@ class Users extends React.Component {
             <div>
                 {pages.map(p => {
                 return <span className={this.props.currentPage === p && styles.selectedPageNumber}
-                onClick={ () => {this.props.setCurrentPage(p)}}>{p}</span>
+                onClick={ () => {this.onPageChanged(p)}}>{p}</span>
                 })}
             </div>
             {
