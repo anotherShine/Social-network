@@ -25,7 +25,8 @@ class Users extends React.Component {
         return <div className={styles.usersPage}>
             <div>
                 {pages.map(p => {
-                return <span className={this.props.currentPage === p && styles.selectedPageNumber}>{p}</span>
+                return <span className={this.props.currentPage === p && styles.selectedPageNumber}
+                onClick={ () => {this.props.setCurrentPage(p)}}>{p}</span>
                 })}
             </div>
             {
