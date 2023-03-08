@@ -27,9 +27,10 @@ class Users extends React.Component {
 
         let pages = [];
         for (let i = 1; i <= pagesCount; i++) {
-            if (true){
-                pages.push(this.props.currentPage + 1);
-               
+            if (i <= 1){
+                pages.push(this.props.currentPage - 1);
+                pages.push(this.props.currentPage);
+                pages.push(this.props.currentPage + 1);  
             }
         }
 console.log(this.props.currentPage)
