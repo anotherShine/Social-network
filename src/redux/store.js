@@ -1,7 +1,7 @@
 import profileReducer from "./profile-reducer.js";
 import dialogsReducer from "./dialogs-reducer.js";
 import sidebarReducer from "./sidebar-reducer.js";
-// import usersReducer from "./users-reducer.js"
+
 
 let store = {
   _state: {
