@@ -17,7 +17,7 @@ let mapStateToProps = (state) => {
         isFetching: state.usersPage.isFetching
     }
 };
-// let mapDispatchToProps = (dispatch) => {
+
 //     return {
 //         follow: (userId) => {
 //             dispatch(follow(userId))
@@ -76,12 +76,10 @@ class UsersContainer extends React.Component {
     }
 }
 export default connect(mapStateToProps, {
-
     follow,
     unFollow,
     setUsers,
     setCurrentPage,
     setTotalUsersCount,
     toggleIsFetching
-
 })(UsersContainer);
