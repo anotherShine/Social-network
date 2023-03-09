@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Users from "./Users";
-import { followAC, unFollowAC, setUsersAC, setCurrentPageAC, setTotalUsersCountAC, toggleIsFetchingAC } from './../../redux/users-reducer';
+import { follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching } from './../../redux/users-reducer';
 import axios from "axios";
 import Preloader from "../common/Preloader/Preloader";
 
@@ -17,28 +17,28 @@ let mapStateToProps = (state) => {
         isFetching: state.usersPage.isFetching
     }
 };
-let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(followAC(userId))
-        },
-        unfollow: (userId) => {
-            dispatch(unFollowAC(userId))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users))
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber))
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setTotalUsersCountAC(totalCount))
-        },
-        toggleIsFetching: (isFetching) => {
-            dispatch(toggleIsFetchingAC(isFetching))
-        }
-    }
-};
+// let mapDispatchToProps = (dispatch) => {
+//     return {
+//         follow: (userId) => {
+//             dispatch(follow(userId))
+//         },
+//         unfollow: (userId) => {
+//             dispatch(unFollow(userId))
+//         },
+//         setUsers: (users) => {
+//             dispatch(setUsers(users))
+//         },
+//         setCurrentPage: (pageNumber) => {
+//             dispatch(setCurrentPage(pageNumber))
+//         },
+//         setTotalUsersCount: (totalCount) => {
+//             dispatch(setTotalUsersCount(totalCount))
+//         },
+//         toggleIsFetching: (isFetching) => {
+//             dispatch(toggleIsFetching(isFetching))
+//         }
+//     }
+// };
 class UsersContainer extends React.Component {
 
     componentDidMount() {
@@ -75,4 +75,13 @@ class UsersContainer extends React.Component {
         </>
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps, {
+
+    follow,
+    unFollow,
+    setUsers,
+    setCurrentPage,
+    setTotalUsersCount,
+    toggleIsFetching
+
+})(UsersContainer);
