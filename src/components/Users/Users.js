@@ -23,7 +23,7 @@ let Users = (props) => {
                 props.currentPage === p ? styles.selectedPageNumber : ""
               }
               onClick={() => {
-                onPageChanged(p);
+                props.onPageChanged(p);
               }}
             >
               {p}
