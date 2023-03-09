@@ -34,7 +34,7 @@ class UsersAPIComponent extends React.Component {
             }
         }
 
-        return <div className={styles.usersPage}>
+        return  <div className={styles.usersPage}>
             <div className={styles.allUsersPage}>
                 {pages.map(p => {
                     return <span className={this.props.currentPage === p ? styles.selectedPageNumber:''}
