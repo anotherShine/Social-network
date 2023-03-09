@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Users from "./Users";
-import { followAC, unFollowAC, setUsersAC, setCurrentPageAC, setTotalUsersCountAC } from './../../redux/users-reducer';
+import { followAC, unFollowAC, setUsersAC, setCurrentPageAC, setTotalUsersCountAC, toggleIsFetchingAC } from './../../redux/users-reducer';
 import axios from "axios";
 import preloader from "../../../src/assets-img/images/preloader.svg"
 
@@ -32,6 +32,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         setTotalUsersCount: (totalCount) => {
             dispatch(setTotalUsersCountAC(totalCount))
+        },
+        toggleIsFetching: (isFetching) => {
+            dispatch(toggleIsFetchingAC(isFetching))
         }
     }
 };
