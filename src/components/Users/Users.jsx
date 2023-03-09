@@ -4,7 +4,7 @@ import axios from "axios";
 import userPhoto from "../../assets-img/images/User-Avatar-Profile-Transparent-Isolated-PNG.png"
 
 
-class Users extends React.Component {
+class UsersAPIComponent extends React.Component {
 
     componentDidMount() {
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}$count=${this.props.pageSize}`)
@@ -27,13 +27,13 @@ class Users extends React.Component {
 
         let pages = [];
         for (let i = 1; i <= pagesCount; i++) {
-            if (i <= 1){
+            if (i <= 1 ){
                 pages.push(this.props.currentPage - 1);
                 pages.push(this.props.currentPage);
                 pages.push(this.props.currentPage + 1);  
             }
         }
-console.log(this.props.currentPage)
+
         return <div className={styles.usersPage}>
             <div className={styles.allUsersPage}>
                 {pages.map(p => {
@@ -70,4 +70,4 @@ console.log(this.props.currentPage)
 }
 
 
-export default Users;
+export default UsersAPIComponent;
