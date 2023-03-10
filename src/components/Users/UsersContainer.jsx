@@ -18,27 +18,6 @@ let mapStateToProps = (state) => {
     }
 };
 
-//     return {
-//         follow: (userId) => {
-//             dispatch(follow(userId))
-//         },
-//         unfollow: (userId) => {
-//             dispatch(unFollow(userId))
-//         },
-//         setUsers: (users) => {
-//             dispatch(setUsers(users))
-//         },
-//         setCurrentPage: (pageNumber) => {
-//             dispatch(setCurrentPage(pageNumber))
-//         },
-//         setTotalUsersCount: (totalCount) => {
-//             dispatch(setTotalUsersCount(totalCount))
-//         },
-//         toggleIsFetching: (isFetching) => {
-//             dispatch(toggleIsFetching(isFetching))
-//         }
-//     }
-// };
 class UsersContainer extends React.Component {
 
     componentDidMount() {
