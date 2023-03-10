@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import Profile from "./components/Profile/Profile";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 import Header from "./components/Header/Header";
 import Navigation from "./components/Navigation/Navigation";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
@@ -16,7 +16,7 @@ function App() {
         <Navigation />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<ProfileContainer />} />
             <Route path="/dialogs/*" element={<DialogsContainer />} />
             <Route path="/users" element={<UsersContainer />} />
             <Route path="/news" />
